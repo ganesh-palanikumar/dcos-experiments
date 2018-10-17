@@ -14,15 +14,17 @@ def main():
     s.bind((TCP_IP, TCP_PORT))
     s.listen(3)
 
-    conn, addr = s.accept()
-    print 'Connection address:', addr
-
-    while 1:
-        data = conn.recv(BUFFER_SIZE)
-        if not data: break
-        print "received data:", data
-        conn.send(data)  # echo
-    conn.close()
+    while True:
+        conn, addr = s.accept()
+        print 'Connection address:', addr
+        while 1:
+            data = conn.recv(BUFFER_SIZE)
+            if not data: 
+                break
+            print "received data:", data
+            conn.send(data)  # echo
+    
+        conn.close()
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,9 @@
+{
+  "id": "master",
+  "description": "master that just listens",
+  "run": {
+    "cpus": 0.1,
+    "mem": 32,
+    "cmd": "curl -LJO https://github.com/ganesh-palanikumar/dcos-experiments/blob/master/jobs/listener/dist/listener && chmod u+x listener && ./ingester"
+  }
+}
