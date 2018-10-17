@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['slave.py'],
-             pathex=['/home/ganesh/cmu/Sem3/18847F/Project/dcos/jobs/slave'],
+             pathex=['/home/ec2-user/dcos-experiments/jobs/slave'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -19,14 +19,18 @@ pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
-          a.binaries,
-          a.zipfiles,
-          a.datas,
           [],
+          exclude_binaries=True,
           name='slave',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          runtime_tmpdir=None,
           console=True )
+coll = COLLECT(exe,
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               strip=False,
+               upx=True,
+               name='slave')
