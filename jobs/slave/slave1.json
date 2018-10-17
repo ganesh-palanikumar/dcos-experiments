@@ -1,0 +1,9 @@
+{
+  "id": "slave1",
+  "description": "slave-stuff",
+  "run": {
+    "cpus": 0.1,
+    "mem": 32,
+    "cmd": "curl -LJO https://github.com/ganesh-palanikumar/dcos-experiments/blob/master/jobs/slave/dist/slave && chmod u+x slave && ./slave <master_ip> 5005 1"
+  }
+}
