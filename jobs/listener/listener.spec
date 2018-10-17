@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['listener.py'],
-             pathex=['/home/ganesh/cmu/Sem3/18847F/Project/dcos/jobs/listener'],
+             pathex=['/home/ec2-user/dcos-experiments/jobs/listener'],
              binaries=[],
              datas=[],
              hiddenimports=[],
